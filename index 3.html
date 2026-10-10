@@ -1,0 +1,279 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Sania Yaqub | Mathematics Student Portfolio</title>
+<meta name="description" content="Portfolio of Sania Yaqub, BS Mathematics student at Bahauddin Zakariya University. Java projects, a presentation on mathematics in space exploration, and contact details.">
+<meta name="theme-color" content="#0A1220">
+<link rel="icon" href="data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 64 64'%3E%3Crect width='64' height='64' rx='14' fill='%230A1220'/%3E%3Cellipse cx='32' cy='32' rx='24' ry='14' fill='none' stroke='%234C8DFF' stroke-width='4' transform='rotate(-25 32 32)'/%3E%3Ccircle cx='38' cy='32' r='7' fill='%233DDC97'/%3E%3C/svg%3E">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400..800&family=Newsreader:ital,opsz,wght@0,6..72,400..600;1,6..72,400&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --ink: #0A1220;
+    --panel: #101B2E;
+    --line: #1F2F4B;
+    --text: #E7EEF9;
+    --muted: #97A8C2;
+    --blue: #5B97FF;
+    --green: #3DDC97;
+    --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+    --body: "Newsreader", Georgia, "Times New Roman", serif;
+  }
+  * { box-sizing: border-box; }
+  html { scroll-behavior: smooth; scroll-padding-top: 72px; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--text);
+    font-family: var(--body);
+    font-size: 1.125rem;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; }
+  :focus-visible { outline: 2px solid var(--green); outline-offset: 3px; border-radius: 4px; }
+  .wrap { max-width: 1080px; margin: 0 auto; padding: 0 20px; }
+  .skip { position: absolute; left: -999px; top: 8px; background: var(--green); color: var(--ink); padding: 8px 14px; font-family: var(--display); z-index: 20; }
+  .skip:focus { left: 8px; }
+
+  /* Header */
+  .bar {
+    position: sticky; top: 0; z-index: 10;
+    background: rgba(10, 18, 32, .88);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid var(--line);
+  }
+  .bar .wrap { display: flex; align-items: center; justify-content: space-between; gap: 16px; min-height: 56px; }
+  .brand { font-family: var(--display); font-weight: 700; text-decoration: none; letter-spacing: -.01em; }
+  .bar nav { display: flex; gap: 22px; font-family: var(--display); font-size: .95rem; }
+  .bar nav a { color: var(--muted); text-decoration: none; padding: 6px 0; }
+  .bar nav a:hover { color: var(--text); }
+
+  /* Hero */
+  .hero { padding: 88px 0 96px; }
+  .hero h1 {
+    font-family: var(--display);
+    font-weight: 800;
+    font-size: clamp(3.4rem, 11vw, 8.5rem);
+    line-height: .95;
+    letter-spacing: -.045em;
+    margin: 0 0 28px;
+  }
+  .hero .role { font-size: clamp(1.2rem, 2.2vw, 1.5rem); line-height: 1.4; color: var(--muted); margin: 0 0 32px; max-width: 34ch; }
+  .hero .role strong { color: var(--text); font-weight: 500; }
+  .actions { display: flex; flex-wrap: wrap; gap: 12px; }
+  .btn {
+    font-family: var(--display); font-weight: 600; font-size: 1rem;
+    text-decoration: none; padding: 12px 22px; border-radius: 999px;
+    border: 1.5px solid var(--line); color: var(--text);
+    transition: border-color .15s, background-color .15s;
+  }
+  .btn:hover { border-color: var(--blue); }
+  .btn.primary { background: var(--green); border-color: var(--green); color: #05150E; }
+  .btn.primary:hover { background: #63E8AF; border-color: #63E8AF; }
+
+
+  /* Sections */
+  .block { padding: 72px 0; border-top: 1px solid var(--line); }
+  .block .wrap { display: grid; grid-template-columns: 200px 1fr; gap: 24px 48px; }
+  .block h2 {
+    font-family: var(--display); font-weight: 700; font-size: clamp(1.5rem, 3vw, 1.9rem);
+    letter-spacing: -.02em; line-height: 1.15; margin: 0;
+  }
+  .lead { font-size: clamp(1.3rem, 2.4vw, 1.65rem); line-height: 1.45; margin: 0 0 20px; max-width: 34em; }
+  .block p { margin: 0 0 16px; max-width: 38em; }
+  .block p:last-child { margin-bottom: 0; }
+
+  /* Skills + contact rows */
+  .rows { margin: 0; padding: 0; list-style: none; }
+  .rows li { display: grid; grid-template-columns: minmax(150px, 220px) 1fr; gap: 4px 24px; padding: 16px 0; border-bottom: 1px solid var(--line); }
+  .rows li:first-child { padding-top: 0; }
+  .rows li:last-child { border-bottom: 0; }
+  .rows b { font-family: var(--display); font-weight: 600; font-size: 1.05rem; }
+  .rows span { color: var(--muted); }
+  .rows a { color: var(--green); text-underline-offset: 4px; text-decoration-thickness: 1px; overflow-wrap: anywhere; }
+  .rows a:hover { text-decoration-thickness: 2px; }
+
+  /* Projects */
+  .projects { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; }
+  .project {
+    background: var(--panel); border: 1px solid var(--line); border-radius: 14px;
+    padding: 26px 26px 24px; display: flex; flex-direction: column; gap: 14px;
+  }
+  .project h3 { font-family: var(--display); font-weight: 700; font-size: 1.35rem; letter-spacing: -.015em; line-height: 1.2; margin: 0; }
+  .project p { margin: 0; color: var(--muted); }
+  .project.featured {
+    grid-column: 1 / -1; border-left: 5px solid var(--green);
+    display: grid; grid-template-columns: 1.1fr 1fr; gap: 14px 40px; padding: 32px;
+  }
+  .project.featured h3 { font-size: clamp(1.7rem, 3.4vw, 2.3rem); }
+  .project.featured .main { display: flex; flex-direction: column; gap: 14px; }
+  .project.featured p { color: var(--text); }
+  .features { margin: 0; padding: 0; list-style: none; display: grid; gap: 10px; align-content: start; }
+  .features li { padding-left: 18px; position: relative; color: var(--muted); font-size: 1.02rem; line-height: 1.5; }
+  .features li::before { content: ""; position: absolute; left: 0; top: .6em; width: 7px; height: 7px; border-radius: 50%; background: var(--blue); }
+  .chips { display: flex; flex-wrap: wrap; gap: 8px; margin-top: auto; }
+  .chip { font-family: var(--display); font-size: .82rem; font-weight: 500; padding: 3px 11px; border-radius: 999px; border: 1px solid var(--line); color: var(--muted); }
+  .code-link { font-family: var(--display); font-weight: 600; font-size: .98rem; color: var(--green); text-underline-offset: 4px; text-decoration-thickness: 1px; width: fit-content; }
+  .code-link:hover { text-decoration-thickness: 2px; }
+
+  /* Presentation */
+  .deck { display: grid; grid-template-columns: 1fr 1fr; gap: 36px; align-items: center; }
+  .deck a.cover { display: block; border-radius: 12px; overflow: hidden; border: 1px solid var(--line); }
+  .deck img { display: block; width: 100%; height: auto; transition: transform .3s; }
+  .deck a.cover:hover img { transform: scale(1.02); }
+  .deck h3 { font-family: var(--display); font-weight: 700; font-size: 1.6rem; letter-spacing: -.02em; line-height: 1.2; margin: 0 0 12px; }
+  .deck p { color: var(--muted); margin: 0 0 22px; }
+
+  footer { border-top: 1px solid var(--line); padding: 28px 0 40px; color: var(--muted); font-size: .95rem; }
+
+  /* Tablet and phone */
+  @media (max-width: 860px) {
+    .hero { padding: 56px 0 64px; }
+    .block { padding: 56px 0; }
+    .block .wrap { grid-template-columns: 1fr; gap: 24px; }
+    .projects, .project.featured, .deck { grid-template-columns: 1fr; }
+    .project.featured { padding: 26px; }
+  }
+  @media (max-width: 560px) {
+    .brand { display: none; }
+    .bar .wrap { justify-content: center; }
+    .bar nav { gap: 14px; font-size: .88rem; }
+    .rows li { grid-template-columns: 1fr; }
+  }
+  @media (prefers-reduced-motion: reduce) {
+    html { scroll-behavior: auto; }
+    .deck img { transition: none; }
+  }
+</style>
+</head>
+<body>
+<a class="skip" href="#about">Skip to content</a>
+
+<header class="bar">
+  <div class="wrap">
+    <a class="brand" href="#top">Sania Yaqub</a>
+    <nav aria-label="Main">
+      <a href="#about">About</a>
+      <a href="#skills">Skills</a>
+      <a href="#projects">Projects</a>
+      <a href="#presentation">Presentation</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main id="top">
+  <section class="hero">
+    <div class="wrap">
+      <h1>Sania Yaqub</h1>
+      <p class="role"><strong>BS Mathematics student</strong> at Bahauddin Zakariya University, learning to program in Java and Python.</p>
+      <div class="actions">
+        <a class="btn primary" href="#projects">See my projects</a>
+        <a class="btn" href="#contact">Get in touch</a>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="about">
+    <div class="wrap">
+      <h2>About</h2>
+      <div>
+        <p class="lead">I'm studying for a BS in Mathematics at Bahauddin Zakariya University.</p>
+        <p>Alongside my degree I'm learning to program in Java and Python. So far I have built three Java projects in IntelliJ: a number guessing game, a shopping cart and a small business management system.</p>
+        <p>I also make presentations in PowerPoint, including one on how mathematics is used in space exploration.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="skills">
+    <div class="wrap">
+      <h2>Skills</h2>
+      <ul class="rows">
+        <li><b>Java</b><span>Basics. Three projects built in IntelliJ.</span></li>
+        <li><b>Python</b><span>Basics.</span></li>
+        <li><b>MS PowerPoint</b><span>I create presentations.</span></li>
+        <li><b>MS Word and Excel</b><span>Basics.</span></li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="block" id="projects">
+    <div class="wrap">
+      <h2>Java projects</h2>
+      <div class="projects">
+
+        <article class="project featured">
+          <div class="main">
+            <h3>BizTrack: small business management system</h3>
+            <p>Helps a small business owner manage inventory, track sales, record expenses and see whether the business is making a profit.</p>
+            <div class="chips"><span class="chip">Java</span><span class="chip">IntelliJ</span></div>
+            <a class="code-link" href="https://github.com/sania5257/java-projects/tree/main/biztrack" target="_blank" rel="noopener">View code on GitHub</a>
+          </div>
+          <ul class="features">
+            <li>Inventory with stock-level monitoring</li>
+            <li>Sales tracking and expense records</li>
+            <li>Profit analysis: investment, expected revenue, actual profit and net profit</li>
+            <li>Reports for inventory, sales, expenses and a business summary</li>
+          </ul>
+        </article>
+
+        <article class="project">
+          <h3>Number Guessing Game</h3>
+          <p>The computer picks a random number from 1 to 100. You keep guessing, get a hint after each try, and the game counts your attempts.</p>
+          <div class="chips"><span class="chip">Java</span><span class="chip">IntelliJ</span></div>
+          <a class="code-link" href="https://github.com/sania5257/java-projects/tree/main/number-guessing-game" target="_blank" rel="noopener">View code on GitHub</a>
+        </article>
+
+        <article class="project">
+          <h3>Shopping Cart</h3>
+          <p>Enter an item's name, price and quantity. The program works out the total cost and shows a summary of the purchase.</p>
+          <div class="chips"><span class="chip">Java</span><span class="chip">IntelliJ</span></div>
+          <a class="code-link" href="https://github.com/sania5257/java-projects/tree/main/shopping-cart" target="_blank" rel="noopener">View code on GitHub</a>
+        </article>
+
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="presentation">
+    <div class="wrap">
+      <h2>Presentation</h2>
+      <div class="deck">
+        <a class="cover" href="Math_in_Space_Exploration.pdf" target="_blank" rel="noopener" aria-label="Open the Mathematics in Space Exploration presentation as a PDF">
+          <img src="presentation-cover.jpg" width="672" height="378" alt="Title slide of Mathematics in Space Exploration, showing a spacecraft above Earth with equations in the background" loading="lazy">
+        </a>
+        <div>
+          <h3>Mathematics in Space Exploration</h3>
+          <p>Seven slides on how mathematics makes space missions possible: orbital mechanics, trajectory optimization, spacecraft navigation and mathematical simulations.</p>
+          <div class="actions">
+            <a class="btn primary" href="Math_in_Space_Exploration.pdf" target="_blank" rel="noopener">Open the PDF</a>
+            <a class="btn" href="Math_in_Space_Exploration.pptx" download>Download PowerPoint</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="block" id="contact">
+    <div class="wrap">
+      <h2>Contact</h2>
+      <ul class="rows">
+        <li><b>Email</b><span><a href="mailto:saniayaqub982@gmail.com">saniayaqub982@gmail.com</a></span></li>
+        <li><b>LinkedIn</b><span><a href="https://www.linkedin.com/in/sania-yaqub-24b44b3b3" target="_blank" rel="noopener">linkedin.com/in/sania-yaqub-24b44b3b3</a></span></li>
+        <li><b>GitHub</b><span><a href="https://github.com/sania5257" target="_blank" rel="noopener">github.com/sania5257</a></span></li>
+      </ul>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="wrap">&copy; 2026 Sania Yaqub</div>
+</footer>
+
+</body>
+</html>
